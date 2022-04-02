@@ -1,0 +1,2 @@
+:~$ raspivid -t 900000 --width 480 --height 260 -fps 25 -o - |vlc stream:///dev/stdin --sout '#standard{access=http,mux=ts,dst=:8090}':demux=h264
+

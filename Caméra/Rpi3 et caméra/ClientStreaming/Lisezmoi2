@@ -1,0 +1,21 @@
+Le fichier gsvd.sh est à mettre sur le bureau de votre ordinateur distant.
+Il permet de lancer le client GStreamerVideoDistante
+
+Pensez à l'autoriser comme un programme (Propriétés/permissions)
+
+En cas de probleme:
+Certaines moutures linux ne permettent pas aisément de lancer dans un terminal.
+
+Dans ce cas ,vous pouvez installer menulibre (sudo apt-get menulibre)
+c'est un logiciel qui permet de créer des raccourcis et d'y selectionner l'option "lancer dans un terminal"
+
+
+Le client VLC quant à lui est en mode graphique.
+Il suffit d'installer VLC sur l'ordinateur distant
+
+
+NB : le lancement de gstreamer n'est pas implémenté sous windows   
+     Il faut sans doute remplacer le fichier .sh par un fichier .bat
+     Quoique... ca marche peut etre, il faudrait tester
+     Mais n'ayant pas de machine windows à disposition , je ne peux pas....
+     AVIS AUX AMATEURS

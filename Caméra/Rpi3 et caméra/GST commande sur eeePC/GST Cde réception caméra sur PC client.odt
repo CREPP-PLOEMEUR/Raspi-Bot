@@ -1,0 +1,1 @@
+﻿gst-launch-1.0 -v tcpclientsrc host= adresse IP du Rpi3 port=5000  ! gdpdepay !  rtph264depay ! avdec_h264 ! videoconvert ! autovideosink sync=false

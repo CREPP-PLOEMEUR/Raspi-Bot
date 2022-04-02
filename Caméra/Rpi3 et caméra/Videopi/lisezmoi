@@ -1,0 +1,11 @@
+les vidéos se lancent à l'aide de leurs fichiers .sh respectifs
+
+L'interface mainvideoZ7.py ne sert qu'à en modifier les parametres si cela s'avere necessaire
+
+Ne pas oublier de vérifier pour les fichiers sh ,dans "propriétés/permissions" que la case "autoriser l'execution du fichier comme un programme est bien cochée
+
+même chose pour le fichier d'interface MainvideoZ7.py
+
+Le fichier MainvideoZ7.py se lance avec "executer"
+
+Les fichiers .sh se lancent avec "lancer dans un terminal"

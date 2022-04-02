@@ -1,0 +1,91 @@
+Motion, un logiciel pour la surveillance vidéo et l’accès en ligne, disponible pour la Raspberry Pi.
+
+La fonction première de Motion est de faire de la vidéo-surveillance avec diffusion en ligne, en temps réel, via une ou plusieurs caméras ! Motion permet également de faire de la « motion capture », c’est-à-dire, que Motion est capable de comparer la dernière image prise avec la nouvelle pour faire de la détection de mouvements.
+
+Motion est un logiciel très simple d’utilisation, disponible pour Raspbian et parfaitement adapté à la vidéo-surveillance avec la Raspberry Pi.
+Installation de motion sur la Raspberry Pi.
+
+Maintenant que vous savez ce qu’est Motion, nous allons voir comment l’installer sur votre Raspberry Pi pour la transformer en caméra de sécurité.
+
+Dans un premier temps, assurez-vous que la Raspberry Pi est bien à jour à l’aide des deux commandes suivantes :
+
+sudo apt-get update
+sudo apt-get upgrade
+
+Une fois ces commandes terminées et la Raspberry Pi à jour, installez maintenant Motion.
+
+Deux situations sont possibles. Soit vous utilisez une webcam standard avec votre Raspberry Pi et, dans ce cas, vous allez chercher Motion en ligne, dans les dépôts officiels de Raspbian. Il vous suffit alors d’utiliser la ligne de commande suivante :
+
+ sudo apt-get install motion
+
+Seconde situation possible, vous utilisez la caméra du Raspberry Pi. Dans ce cas, vous allez devoir chercher Motion en ligne puis modifier le comportement de la caméra pour la faire apparaître dans « /dev/video0 ».
+
+Pour cela, vous allez commencer par installer Motion depuis les dépôts officiels de Raspbian :
+
+sudo apt-get install motion
+
+Ceci fait, lancez la commande suivante pour rendre la caméra du Raspberry Pi compatible avec motion :
+
+sudo modprobe bcm2835-v4l2
+
+Si tout c’est bien passé, il ne vous reste plus qu’à rendre cette modification permanente :
+
+echo "bcm2835-v4l2" | sudo tee -a /etc/modules
+
+Motion est maintenant installé sur votre Raspberry Pi, nous allons donc pouvoir passer à l’étape suivante.
+Configurer Motion sur votre Raspberry Pi
+
+Nous allons maintenant tâcher de configurer Motion sur votre Raspberry Pi pour en faire une caméra de sécurité.
+
+Dans un premier temps, assurons-nous que Motion tourne en permanence. Pour cela, éditez le fichier « /etc/default/motion » et modifiez la ligne « start_motion_daemon » en :
+
+ start_motion_daemon=yes
+
+Maintenant, modifions un certain nombre de points de la configuration de Motion, afin de régler au mieux notre système de vidéo-surveillance.
+
+Pour cela, éditez le fichier « /etc/motion.conf », dans certains cas ce fichier se trouvera plutôt dans « /etc/motion/motion.conf ».
+
+Vous allez modifier certaines lignes de ce fichier de façon à ce qu’elles correspondent aux lignes ci-dessous :
+
+#On active le daemon
+daemon on
+#On utilise le fichier /tmp/motion.log pour stocker les logs
+logfile /tmp/motion.log
+#On règle la résolution (adapter la résolution à celle de votre camera. Ici, nous avons réglé pour la caméra de la raspberry pi)
+width 1280
+height 720
+#On règle le nombre d'images prises par seconde
+framerate 2
+#On règle le nombre d'images enregistrées avant et après un mouvement (ici 2 avant 2 après)
+pre_capture 2
+post_capture 2
+#On règle le code, pour une lecture sur de nombreux médias
+ffmpeg_video_codec msmpeg4
+#On autorise la lecture du flux depuis internet pour permettre l'accès en ligne à la vidéo-surveillance
+stream_localhost off
+
+Par défaut Motion diffuse la vidéo sur le port 8080 de la Raspberry Pi. Si vous souhaitez modifier ce port, éditez le fichier de configuration vu précédemment et modifier la ligne « webcontrol_port ».
+
+Pour ce qui est de la résolution, privilégiez une résolution compatible avec la caméra ou éventuellement une résolution inférieure. En effet demander du fullHD n’est pas très logique si votre caméra ne permet que 480p !
+
+De plus vous devez penser à votre connexion, si vous avez une simple connexion ADSL la diffusion par internet avec un framerate élevé (24ips) ou une forte résolution sera possiblement un peu lente (remarquez que ça ne serait pas le cas si les opérateurs fournissaient les vrais débits disponibles en ADSL hein…).
+Accéder à la surveillance vidéo de votre Raspberry Pi à distance
+
+Vous allez, très probablement, avoir envie de voir votre vidéo surveillance en direct sur votre Raspberry Pi depuis n’importe où. Nous avons d’ailleurs configurer Motion dans ce sens.
+
+Pour cela, vous allez avoir besoin de rendre votre Raspberry Pi accessible à distance, nous vous renvoyons donc à notre article dédié au dyndns.
+
+Une fois que votre Raspberry Pi est accessible à distance, vous n’avez plus qu’à y accéder par internet en tapant directement l’URL de votre Raspberry Pi dans votre navigateur (si possible plutôt Firefox, Chrome semble avoir quelques difficultés), suivi du numéro de port (ex : http://votreurl.no-ip.biz:8080). Vous pouvez également accéder au flux vidéo via VLC !
+Conclusion
+
+Voilà, votre Raspberry Pi est maintenant équipée pour faire un système de vidéo-surveillance efficace !
+
+Des captures vidéo seront prises en cas de mouvements et stockées dans le répertoire indiqué dans la configuration de Motion, à la ligne « target_dir » (par défaut le répertoire « /home/pi »).
+
+Vous aurez peut-être besoin de quelques accessoires pour votre système de stockage, comme un disque dur ou un boîtier, nous vous renvoyons à l’article dédié.
+
+Nous espérons que ce tutoriel vous aura été utile et que vous vous amuserez bien avec votre caméra !
+	Partager
+	Newsletter
+Auteur :
+Raspbian France

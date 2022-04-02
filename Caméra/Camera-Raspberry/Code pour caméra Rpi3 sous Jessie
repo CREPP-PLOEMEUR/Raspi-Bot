@@ -1,0 +1,98 @@
+﻿Sous Jessie
+
+L’installation sous Jessie est un peu différente :
+	
+1-sudo apt-get install -y libjpeg-dev libavformat56 libavformat-dev libavcodec56 libavcodec-dev libavutil54 libavutil-dev libc6-dev zlib1g-dev libmysqlclient18 libmysqlclient-dev libpq5 libpq-dev
+2-wget https://www.dropbox.com/s/6ruqgv1h65zufr6/motion-mmal-lowflyerUK-20151114.tar.gz
+3-tar -zxvf motion-mmal-lowflyerUK-<wbr />20151114.tar.gz
+4-pi@raspberry /tmp $  sudo mv motion /usr/bin/motion
+5-pi@raspberry /tmp $  sudo mv motion-mmalcam-both.conf /etc/motion.conf
+
+puis faire comme dans le tuto…
+	
+daemon on
+
+Le fichier journal va être enregistré dans le répertoire /tmp sinon l’utilisateur autostart ne pourra pas accéder au répertoire /home/pi :
+1
+	
+logfile /tmp/motion.log
+
+Pour avoir une vidéosurveillance de bonne qualité la définition est fixée à 1280 x 720 pixels :
+1
+2
+	
+width 1280
+height 720
+
+La vidéosurveillance peut se contenter de 2 images par seconde. Le flux vidéo continu est inutile :
+1
+	
+framerate 2
+
+Vient ensuite une fonctionnalité très pratique du logiciel motion : enregistrer des images (2 avec notre configuration notre configuration) avant et après qu’un mouvement ait été détecté dans l’image :
+1
+2
+	
+pre_capture 2
+post_capture 2
+
+Nous ne voulons pas de films sans fin. Au lieu de cela, nous voulons avoir au plus des séquences vidéo de 10 minutes maximum. Cette option de configuration qui s’appelait max_movie_time a été renommée  max_mpeg_time dans motion. Si vous utilisez la version motion-mmal, cela fonctionne. Si vous obtenez une erreur Unknown config option  « max_mpeg_time » modifiez l’option en max_movie_time ou assurez-vous d’utiliser vraiment la version motion-mmal comme indiqué ci-dessus.
+1
+	
+max_mpeg_time 600
+
+Certains lecteurs multimédia comme VLC sont incapables de lire les films enregistrés. En utilisant le codec msmpeg4 les films sont lus par tous les lecteurs.
+1
+	
+ffmpeg_video_codec msmpeg4
+
+Pour pouvoir lire le flux vidéo en direct de n’importe où il faut l’autoriser. Sinon, seul localhost (le Raspberry Pi lui-même) serait autorisé à accéder à la diffusion en direct :
+1
+	
+stream_localhost off
+
+Si vous voulez protéger le flux vidéo le flux avec un login et un mot de passe, ajoutez l’option suivante :
+1
+2
+	
+stream_auth_method 2
+stream_authentication LOGIN:MOT_DE_PASSE
+
+Tous les paramètres utilisables dans le fichier de configuration sont expliqués en détail dans la documentation de la configuration de motion.
+
+Après avoir réalisé vos modifications de paramètres dans motion.conf, redémarrez le Raspberry Pi pour qu’ils soient pris en compte :
+1
+	
+sudo reboot
+
+Après le redémarrage, la LED rouge de la caméra devrait être allumée, indiquant que motion utilise la caméra pour détecter tout mouvement.
+
+
+Démarrer motion automatiquement
+
+Lors des essais, motion n’a pas été lancé automatiquement lors d’un redémarrage du Raspberry Pi. Il est apparu que c’était parce que le dossier monté depuis la machine Windows n’était pas encore prêt quand motion a essayé d’y accéder.
+
+Un correctif a rapidement résolu notre problème :
+
+Il suffit d’éditer le fichier de configuration
+1
+	
+sudo nano /etc/init.d/motion
+
+en ajoutant la ligne
+1
+	
+sleep 30
+
+à la séquence de démarrage (flèche sur la copie d’écran ci-dessous)
+initd_motionLe script modifié /etc/init.d/motion peut être téléchargé dans le fichier ci dessous :
+
+raspberry_surveillance_cam_scavix
+
+
+
+
+
+
+
+
