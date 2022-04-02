@@ -3,6 +3,8 @@
 
 Un robot avec retour vidéo et contrôle par Bluetooth
 
+![IMG](.img/rpi.jpg)
+
 ## Sommaire
 
 - Caméra : Toutes les informations sur la caméra et son contrôle
