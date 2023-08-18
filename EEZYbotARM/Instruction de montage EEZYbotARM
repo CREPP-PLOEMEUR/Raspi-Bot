@@ -1,0 +1,229 @@
+﻿Part list:
+
+n° 20 3D printed parts
+
+· n°1 EBA_01.00.001.STL
+
+· n°1 EBA_01.00.002_vertical_drive_arm.STL
+
+· n°3 EBA_01.00.003_link.STL
+
+· n°1 EBA_01.00.004_forward_drive_arm.STL
+
+· n°1 EBA_01.00.005_horizontal_arm.STL
+
+· n°1 EBA_01.00.006_triangular_link.STL
+
+· n°2 EBA_01.00.009_servo_plate.STL
+
+· n°1 EBA_01.00.010_basement.STL
+
+· n°1 EBA_01.00.011_round_plate.STL
+
+· n°1 EBA_01.00.012_R01_claw_support.STL
+
+· n°1 EBA_01.00.013_R01_right_finger.STL
+
+· n°1 EBA_01.00.014_R01_left_finger.STL
+
+· n°1 EBA_01.00.015_drive_gear.STL
+
+· n°1 EBA_01.00.016_R01_driven_gear.STL
+
+· n°1 EBA_01.00.017_R01_ramp.STL (optional)
+
+· n°1 EBA_01.00.018_maestro_holder.STL (optional)
+
+· n°1 EBA_01.00.019_ball.STL (optional)
+
+n* 3 Tower Pro MG90S servos
+
+n* 1 SG90 servo (gripper) + 1 optional for the loop ramp
+
+n° 7 M4 self locking nuts
+
+n° 15 M4 washers
+
+n° 7 M3 nuts
+
+n° 1 M3 x 30 screw
+
+n° 2 M3 washers
+
+n° 4 M3 x 12 hex screw
+
+n° 2 M3 x 12 TCEI screw
+
+n° 2 M3 x 20 TCEI screw
+
+n° 5 M4 x 20 round hed hex recess screw
+
+n° 1 brass pipe 4 x 3 x 22 + n°1 4 x 3 x 26
+
+ELECTRONICS
+
+The Arm can be driven in several different ways : sketches, potentiometers, joystick, WII nunchuck …. after several trials I found very "easy" to use a controller from Pololu: Mini Maestro USB Servo Controller. You can attach up to 6 – 12 – 24 servos depend of the controller type. It is provided with a free configuration and control program for Windows and Linux that give you the power to drive the servo in manual moving slides; in the mean time you are able to set the values of speed and acceleration for any singular item. You can also build sequences of servo movements and run scripts stored in the internal script memory that can be automatically played back without any computer or external microcontroller connected.
+
+Step 1:
+
+Connect two link arms (003) to the Triangular link (006).
+
+Keep the M4 round heads screws to the inner side like shown on image and selflocking nuts to the outer side.
+
+IMPORTANT
+
+I design all the holes of joints quite exact to allow to make them more precise using a drill bit
+
+The nuts are to be tightened till the locking of the joint, then consequently you must loose them until you obtain a smooth movement with the lower clearance between components. This rule is valid and is to be applied also for the following joint that involve use of self locking nuts.
+
+Step 2:
+
+Connect link (003) to the rear joint of the horizontal arm (005).
+
+The lower part of the link (003) is to be connected with the vertical drive arm (002) as shown.
+
+Between the two links interpose three M4 washer, this to better align them with the vertical arm
+
+Keep the M4 round heads screws to the inner side and self locking nuts outside
+
+Step 3:
+
+Connect now the two preassembled links to the forward drive arm (004).
+
+Punt in position horizontal arm (005) and triangular link (006) aligned with the upper connection of the forward drive arm (004). Insert the Ø4 mm brass pipe crossing all the parts and fix it with the M3x30 screw, locked by the nut on the other side.
+
+Verify the freedom of movement and If everything is ok, proceed to the next step.
+
+Step 4: Base Assembly
+Base Assembly
+
+Part list:
+
+· n° 1 EBA_01.00.001_base.stl
+
+· n° 1 EBA_01.00.011_round plate.stl
+
+· n° 1 EBA_01.00.010_basement.stl
+
+· n° 1 TowerPro metal gear MG90S servo with double arm horn
+
+· n° 1 servo horn fixing screw
+
+· n° 2 M3 x 15 screw (VTCEI)
+
+· n° 3 M3 nuts
+
+Step 5:
+Immagine 4 3.png
+
+Be sure that the servo is in the neutral position than install the double arm horn on the splined shaft keeping the arms parallel to the servo body
+
+Insert the horn inside the housing below the round plate and fix the servo to the plate using one of the two long screw supplied with the servo (the small one in too short due to the thickness of round plate)
+
+Step 6:
+Immagine 8.png
+
+Put in position the base between the two shoulder on the plate and attach together using the two M3 screws and nuts. There two hexagonal housing below, so nuts will be kept in position during tightening
+
+Step 7:
+Immagine 9.png
+Immagine 11.png
+
+Align the servo and introduce the wiring in the central part of the basement. Gently pull the wire to make it straight while continue to push in it housing the servo
+
+The wire is then kept in position making it pass through a frontal hole
+
+Step 8: Gripper Assembly
+Gripper Assembly
+
+Part list:
+
+· n° 1 TowerPro metal gear MG90S servo with single arm horn
+
+· n° 1 servo horn fixing screw
+
+· n° 1 EBA_01.00.012_claw support.stl
+
+· n° 1 EBA_01.00.015_drive gear.stl
+
+· n° 1 EBA_01.00.014_left finger.stl
+
+· n° 1 EBA_01.00.016_driven gear.stl
+
+· n° 1 EBA_01.00.013_right finger.stl
+
+· n° 2 M3 x 20 screw (TCEI)
+
+· n° 3 M3 selflocking nuts
+
+Step 9:
+
+Attach the servo to the claw support using the two fixing screws supplied
+with the servo
+
+Keep the output shaft forward
+
+Step 10:
+Immagine 9.png
+Immagine 10.png
+
+Insert the horn in the driven gear then attach the horn at the servo shaft using the supplied screw
+
+The horn has to be aligned forward with the servo in neutral position. Cut the exceeding part of the horn from gear using a cutter
+
+Step 11:
+
+Insert an M3 screw in the central hole connect it to the claw support then tight the self locking nut checking the freedom of movement
+
+Step 12:
+Immagine 12.png
+Immagine 5.png
+Immagine 4.png
+
+Insert the two pin of the driven gear into the dedicated holes on the left finger The driven gear has also a shoulder that has to be aligned with the lateral side of the finger. If you find difficulties coupling them, reduce interference using a file.
+
+Once coupled insert an M3 screw in the central hole and attach the finger to the claw support
+
+Now the gripper is ready to be installed on the horizontal arm of the EEzybot
+
+Verify freedom of movement of the gripper manually or using a servo tester
+
+Step 13: Final Assembly
+Final Assembly
+
+Now we have the three main sub assembly ready to be connected each other.
+
+Next step we will join the base with the main arms
+
+Step 14:
+Immagine 7.png
+
+To join the base with the main arms align the axis of the parts and insert from one side the brass pipe 24mm long.
+
+Also the short arm of the servo that drive the vertical movement has to be supported by the brass pipe as shown on the pictures.
+
+Check the freedom of movement
+
+Step 15:
+Immagine 11.png
+
+Is time now to install the servo that drive the vertical movement of the arm. Put in the dedicate receptacles two M3x10 hex screw. The servo has to be in the neutral position with the horn at 90 degrees on the right side with the press plate (009) installed (Make the wiring pass through the dedicated enlargment).
+
+Introduce the servo angled in the square seat on the base plate and slide the horn in the shaped housing of the arm that drives the vertical movement. Fixt the press plate against the servo using two M3 nuts
+
+Step 16: Fwd/bckw Drive Servo
+Fwd/bckw Drive Servo
+Immagine 13.png
+
+Sequence for the forward&backward driving servo is similar to the previous. In this case the servo horn has to be installed with the servo in neutral condition aligned vertically.
+
+Step 17: Last Link
+Last Link
+
+attach the latest link to the fixed arm on the rear side of the base using a M4x20 a washer and a selflocking nut
+
+Step 18: Attaching the Gripper
+Attaching the Gripper
+
+The last assembly step is to join the gripper to the horizontal arm as shown on the picture.
+
