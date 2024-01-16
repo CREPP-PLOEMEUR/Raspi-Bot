@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InterfaceCommande</class>
+ <widget class="QWidget" name="InterfaceCommande">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>516</width>
+    <height>658</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Interface Commande Raspibot</string>
+  </property>
+  <widget class="QWidget" name="moteurs" native="true">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>180</y>
+     <width>260</width>
+     <height>260</height>
+    </rect>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(83, 249, 122);
+selection-background-color: rgb(255, 0, 0);
+</string>
+   </property>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>0</y>
+      <width>20</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>131</x>
+      <y>0</y>
+      <width>20</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>-3</x>
+      <y>135</y>
+      <width>261</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_4">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>109</y>
+      <width>261</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_5">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>9</y>
+      <width>261</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_6">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>235</y>
+      <width>261</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QWidget" name="clic" native="true">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>3</width>
+      <height>3</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 0, 0);
+color: rgb(255, 0, 0);</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>180</y>
+     <width>241</width>
+     <height>383</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0">
+    <item row="17" column="2">
+     <widget class="QSlider" name="EBS">
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>120</number>
+      </property>
+      <property name="value">
+       <number>60</number>
+      </property>
+      <property name="sliderPosition">
+       <number>60</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="2">
+     <widget class="QLabel" name="EBLabel">
+      <property name="text">
+       <string>Elevation Bras-8</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="RAZgeneral">
+      <property name="maximumSize">
+       <size>
+        <width>40</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remet servos et moteurs en position initiale&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 170, 255);</string>
+      </property>
+      <property name="text">
+       <string>Init</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="1">
+     <widget class="QPushButton" name="RBini">
+      <property name="maximumSize">
+       <size>
+        <width>40</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remet la rotation bras  en position médiane (60°)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Init</string>
+      </property>
+     </widget>
+    </item>
+    <item row="21" column="1">
+     <widget class="QPushButton" name="pinceini">
+      <property name="maximumSize">
+       <size>
+        <width>40</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remet la pince en position médiane (60°)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Init</string>
+      </property>
+     </widget>
+    </item>
+    <item row="17" column="1">
+     <widget class="QPushButton" name="ElevBini">
+      <property name="maximumSize">
+       <size>
+        <width>40</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remet l'elevation bras en position médiane (60°)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Init</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QPushButton" name="RotCini">
+      <property name="maximumSize">
+       <size>
+        <width>40</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remet la rotation camera à 60°&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 127);</string>
+      </property>
+      <property name="text">
+       <string>Init</string>
+      </property>
+     </widget>
+    </item>
+    <item row="21" column="2">
+     <widget class="QSlider" name="PinceS">
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>120</number>
+      </property>
+      <property name="value">
+       <number>60</number>
+      </property>
+      <property name="sliderPosition">
+       <number>60</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="2">
+     <widget class="QSlider" name="RBS">
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>120</number>
+      </property>
+      <property name="value">
+       <number>60</number>
+      </property>
+      <property name="sliderPosition">
+       <number>60</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="RAZLabel">
+      <property name="text">
+       <string>Remise à Zéro</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="2">
+     <widget class="QSlider" name="AvArBS">
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>120</number>
+      </property>
+      <property name="value">
+       <number>60</number>
+      </property>
+      <property name="sliderPosition">
+       <number>60</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="invertedControls">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QLabel" name="RCLabel">
+      <property name="text">
+       <string>Rotation Cam-5</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="3">
+     <widget class="QLCDNumber" name="RCVal">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(99, 99, 99);</string>
+      </property>
+      <property name="numDigits">
+       <number>3</number>
+      </property>
+      <property name="intValue" stdset="0">
+       <number>60</number>
+      </property>
+     </widget>
+    </item>
+    <item row="17" column="3">
+     <widget class="QLCDNumber" name="ElevBVal">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(99, 99, 99);</string>
+      </property>
+      <property name="numDigits">
+       <number>3</number>
+      </property>
+      <property name="intValue" stdset="0">
+       <number>60</number>
+      </property>
+     </widget>
+    </item>
+    <item row="21" column="3">
+     <widget class="QLCDNumber" name="PinceVal">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(99, 99, 99);</string>
+      </property>
+      <property name="numDigits">
+       <number>3</number>
+      </property>
+      <property name="intValue" stdset="0">
+       <number>60</number>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="3">
+     <widget class="QLCDNumber" name="RBVal">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(99, 99, 99);</string>
+      </property>
+      <property name="numDigits">
+       <number>3</number>
+      </property>
+      <property name="intValue" stdset="0">
+       <number>60</number>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>30</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="20" column="2">
+     <widget class="QLabel" name="PinceLabel">
+      <property name="text">
+       <string>Pince-9</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="2">
+     <widget class="QSlider" name="RCS">
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>120</number>
+      </property>
+      <property name="value">
+       <number>60</number>
+      </property>
+      <property name="sliderPosition">
+       <number>60</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QSlider" name="HBCS">
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>120</number>
+      </property>
+      <property name="value">
+       <number>60</number>
+      </property>
+      <property name="sliderPosition">
+       <number>60</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="1">
+     <widget class="QPushButton" name="AvArBini">
+      <property name="maximumSize">
+       <size>
+        <width>40</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remet Av/Ar bras en position médiane (60°)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Init</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="3">
+     <widget class="QLCDNumber" name="AvArBVal">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(99, 99, 99);</string>
+      </property>
+      <property name="numDigits">
+       <number>3</number>
+      </property>
+      <property name="intValue" stdset="0">
+       <number>60</number>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="HBCini">
+      <property name="maximumSize">
+       <size>
+        <width>40</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remet l'elevation camera en position médiane (60°)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 127);</string>
+      </property>
+      <property name="text">
+       <string>Init</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="HBCLabel">
+      <property name="text">
+       <string>Haut/Bas Cam-4</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QLCDNumber" name="HBCVal">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(99, 99, 99);</string>
+      </property>
+      <property name="numDigits">
+       <number>3</number>
+      </property>
+      <property name="intValue" stdset="0">
+       <number>60</number>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="2">
+     <widget class="QLabel" name="AvArBLabel">
+      <property name="text">
+       <string>Av/Ar Bras-7</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="2">
+     <widget class="QLabel" name="RBLabel">
+      <property name="text">
+       <string>Rotation Bras-6</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>470</y>
+     <width>258</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QLCDNumber" name="sourisY">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:400;&quot;&gt;Visualisation moteur gauche&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 170, 127);</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLCDNumber" name="sourisX">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:400;&quot;&gt;Visualisation moteur droit&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 170, 127);</string>
+      </property>
+      <property name="segmentStyle">
+       <enum>QLCDNumber::Filled</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="MGLabel">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 170, 127);</string>
+      </property>
+      <property name="text">
+       <string>Mot Gauche</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QRadioButton" name="InversionB">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Inversion moteurs (un en avant, l'autre en arriere)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 127);</string>
+      </property>
+      <property name="text">
+       <string>Inverse</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="MDLabel">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 170, 127);</string>
+      </property>
+      <property name="text">
+       <string>MotDroit</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="MGini">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Arrêt moteur gauche (position d'attente)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 255, 127);</string>
+      </property>
+      <property name="text">
+       <string>Stop G</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="MDini">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Arret moteur Droit(position d'attente)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 255, 127);</string>
+      </property>
+      <property name="text">
+       <string>Stop D</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="Stopper">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Arrêt des deux moteurs (position d'attente)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 55, 55);</string>
+      </property>
+      <property name="text">
+       <string>STOP</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QCheckBox" name="checkBox">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Passage de mode manuel (selectionné) en automatique(désélectionné)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 170, 255);</string>
+      </property>
+      <property name="text">
+       <string> Manuel</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>10</y>
+     <width>511</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QComboBox" name="PortSerie">
+      <property name="maxVisibleItems">
+       <number>1</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="Port">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Port</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="vitesse">
+      <property name="text">
+       <string>Vitesse</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="Vcom">
+      <item>
+       <property name="text">
+        <string>115200</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>38400</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>9600</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>59</y>
+     <width>131</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="Connexion">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Lancement de la connexion serie une fois fixés le port et la vitesse&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 121, 123);</string>
+      </property>
+      <property name="text">
+       <string>Activer Port</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEditChaineEnvoi">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Champ d'entrée de commande manuelle&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="Envoi">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bouton d'envoi pour commande manuelle&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Envoi</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>249</x>
+     <y>59</y>
+     <width>261</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLabel" name="receptionLabel">
+      <property name="text">
+       <string>RECEPTION</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textReception"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="crepp">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>80</y>
+     <width>119</width>
+     <height>59</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../InterfaceFlo/logocrepp.jpg</pixmap>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>RCS</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>RCVal</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>189</x>
+     <y>269</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>361</x>
+     <y>271</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>HBCS</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>HBCVal</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>189</x>
+     <y>309</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>301</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RBS</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>RBVal</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>379</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>371</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>EBS</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ElevBVal</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>419</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>411</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AvArBS</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>AvArBVal</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>459</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>451</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PinceS</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>PinceVal</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>499</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>491</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
