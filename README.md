@@ -1,4 +1,9 @@
+<!--# RaspiBot -->
+<!--$ Python-->
+<!--$ Arduino -->
+<!--$ Bluetooth -->
 
+<!--% Un robot avec retour vidéo et contrôle par Bluetooth -->
 # RaspiBot
 
 Un robot avec retour vidéo et contrôle par Bluetooth
@@ -9,7 +14,7 @@ Un robot avec retour vidéo et contrôle par Bluetooth
 
 - Caméra : Toutes les informations sur la caméra et son contrôle
 
-- Code_Arduino : Le code du robot avec les bilbiothèques Arduino
+- Code_Arduino : Le code du robot avec les bibliothèques Arduino
 
 - Code_essais : Les codes d'essais des moteurs, caméra...
 
