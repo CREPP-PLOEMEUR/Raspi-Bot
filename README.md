@@ -1,9 +1,11 @@
 <!--# RaspiBot -->
+<!--+ 2016-2017 -->
 <!--$ Python-->
 <!--$ Arduino -->
 <!--$ Bluetooth -->
 
 <!--% Un robot avec retour vidéo et contrôle par Bluetooth -->
+
 # RaspiBot
 
 Un robot avec retour vidéo et contrôle par Bluetooth
